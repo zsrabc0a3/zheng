@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="icon" type="" href="../img/tupian/favicon.ico"/>
+		
+		<style>
+	    *{margin:0;padding:0;list-style: none;}
+		#commonHeader{width:1350px;height:162px;}
+		#commonFooter{width:1350px;height:500px;float: left;margin:10px 0 0  0;}	
+	    #step{width:1200px;height:50px;margin:0 auto;}
+		#stepul{width:600px;height:50px;line-height:50px;float:left;padding-left:720px;}
+		#stepul li{float: left;font-size:12px;text-align: center;padding:0 30px;background: url(../img/tupian/cart.gif) 0px 12px no-repeat;width:90px;height:40px;}
+		/*#stepul li:hover{background: url(../img/tupian/cart.gif) -150px 12px no-repeat;color: white;}*/
+		#gouwulan{display: block;width:1200px;height:100px;margin:0 auto;border-bottom:1px solid #e4e4e4;border-top:1px solid #e4e4e4;cursor: pointer;display: none;}
+		.p:hover{color: red !important;}
+		table{width:1200px; margin:0 auto; border-spacing: 0;border-collapse: collapse;margin-bottom: 10px;}
+		tbody tr{margin: 0 auto;border:solid 1px #f1f1f1;}
+		tbody tr th{background: #fafafa;border:solid 1px #f1f1f1;}
+		#rowsi{width:1200px;height:40px;margin:0 auto;}
+		#totil{width:400px;height:40px;float:right;}
+		#totil strong{color:rgb(255, 102, 0);line-height:40px;font-size:16px;text-align: center;}
+		#ems{width:150px;height:40px;line-height:40px;font-size:12px;color:rgb(255, 102, 0);float: left;text-align: center;}
+		#es{color: rgb(102, 102, 102); width:80px;height:40px;float: left;line-height:40px;text-align: center;font-size:12px;}
+		#esp{font-size:12px;height:40px;line-height:40px;font-size:12px;text-align: center;width:50px;float: left;color:rgb(255, 102, 0);}
+		#jine{width:60px;height:40px;line-height:40px;text-align: center;float:left;color: rgb(102, 102, 102);font-size:12px;}
+		.spans{width:1200px;height:40px;margin:10px auto;background:rgb(253, 253, 253);border:1px solid rgb(241, 241, 241);}
+		.qingkong{width:60px;height:40px;float:right;text-align: center;line-height:40px;color: rgb(102, 102, 102);}
+		.qingkong:hover{color:rgb(255, 102, 0);}
+		.butss{width:70px;height:40px;float:right;background: rgb(255, 126, 81);outline:none;border:0;color: white;}
+		</style>
+       
+	</head>
+	<body>
+		<div id="commonHeader">
+			
+		</div>
+		<div id="step">
+			<ul id="stepul">
+				<li style="background:url(../img/tupian/cart.gif) -150px 12px no-repeat;color:white;">查看购物车</li>
+				<li>订单结算</li>
+				<li>订单完成</li>
+				
+			</ul>
+		</div>
+		<div id="gouwulan">
+			<a class="p" style="text-align: center !important;display: block;line-height:100px;text-decoration: none;color:#888888;" href="zhuye.html">您的购物车是空的，立即去商城逛逛</a>
+		</div>
+		<div id="gouwulana">
+			<table id="cartTable" class="cartTable">
+						<tbody><tr>
+							<th style="width:80px;height:37px; border:solid 1px #f1f1f1;">图片</th>
+							<th style="width:350px;height:37px;">商品</th>
+							<th style="width:220px;height:37px;">价格</th>
+							<th style="width:81px;height:37px;">数量</th>
+							<th style="width:151px;height:37px;">小计</th>
+							<th style="width:159px;height:37px;">操作</th>
+						</tr>
+							<tr>
+								<td style="border:solid 1px #f1f1f1;border-top: 0;border-left:0;">
+									<input name="skuId" value="206894" type="hidden">
+									<img src="http://www.96192.com/upload/image/201810/6f23fcff-0f55-42a7-9685-126e408206c5-thumbnail.jpg" style="width:80px;height:80px; ">
+								</td>
+								<td style="border:solid 1px #f1f1f1;border-top: 0;border-left:0;">
+									<a href="/product/detail/197344" title="每日读诗日历2019" target="_blank">每日读诗日历2019</a>
+								</td>
+								<td style="border:solid 1px #f1f1f1;border-top: 0;border-left:0;">
+									￥68.64
+								</td>
+								<td class="quantity" width="60" style="border:solid 1px #f1f1f1;border-top: 0;border-left:0;">
+									<input name="quantity" value="1" maxlength="4" onpaste="return false;" type="text">
+									<div>
+										<span class="increase">&nbsp;</span>
+										<span class="decrease">&nbsp;</span>
+									</div>
+								</td >
+								<td style="border:solid 1px #f1f1f1;border-top: 0;border-left:0;">
+									<span class="subtotal">￥68.64</span>
+								</td>
+								<td style="border:solid 1px #f1f1f1;border-top: 0;border-left:0;">
+									<a href="javascript:;" class="remove">删除</a>
+								</td>
+							</tr>
+							
+					</tbody></table>
+		</div>
+		<div id="rowsi">
+			<div id="totil">
+				<div id="ems">登录后确认是否享有优惠</div>
+				<div id="es">赠送积分</div>
+				<div id="esp">126</div>
+				<div id="jine">商品金额:</div>
+				<strong>100</strong>
+				<div></div>
+			</div>
+		</div>
+		<div class="spans">
+			<button class="butss">结算</button>
+			<div class="qingkong">清空</div>
+			
+		</div>
+		<div id="commonFooter"></div>
+		<div id="onebondtops"></div>
+		<script type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
+		<script>
+			$("#commonHeader").load("header.html","dd",function(){
+			})
+		     $("#onebondtops").load("Onebondtop.html","dd",function(){
+			})
+			$("#commonFooter").load("footer.html","dd",function(){
+			})
+			
+			
+		</script>
+	</body>
+</html>

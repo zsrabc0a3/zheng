@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="icon" type="" href="../img/tupian/favicon.ico"/>
+		<style>
+			*{margin: 0;padding: 0;list-style: none;}
+			#commonHeader{width:1350px;height:162px;}
+			#detailsrow{width:1200px;height:100%;margin: 0 auto;}
+			#detailsrow-left{width:230px;float:left;height:100%;}
+			#detailsrow-left>ul{width:208px;height:360px;border: 1px solid silver;}
+			#detailsrow-left>ul>li{width:208px;height:60px;float: left;}
+			#detailsrow-left-li{background: #f1f1f1 !important;}
+			#detailsrow-left>ul>li:hover{background:#B89986 !important;transition: all 0.4s;color:white !important;}
+			#detailsrow-left>ul>li:hover div{transition: all 1s;color:white !important;}
+			#detailsrow-left>ul>li>div{font-weight:900;height:30px;line-height:30px;padding:0 5px;font-size:14px;cursor: pointer;color:#4D4D4D;}
+			#detailsrow-left>ul>li>ul>li{font-size:8px;float: left;height:30px;line-height:30px;cursor: pointer;margin: 0 0 0 3px;}
+		    #left-hotsell{width:208px;height:856px;margin:20px 0;border:1px solid silver;border-bottom: #CCCCCC;}
+		    #left-hotsell-p{width:208px;height:40px;border-bottom:1px solid silver;line-height:39px;font-size:12px;color:#888888;padding:0 5px;box-sizing: border-box;}
+		    #left-historyProduct-p{width:208px;height:39px;line-height:39px;font-size:12px;color:#888888;padding:0 5px;box-sizing: border-box;border-bottom:1px solid silver;}
+		    #left-historyProduct-pp{width:208px;height:39px;line-height:39px;font-size:12px;color:#888888;padding:0 5px;box-sizing: border-box;}
+		    #produce{width:208px;height:290px;float: left;}
+		    #produceimg{width:208px;height:200px;float: left;position:relative;}
+		    #produceimg img{width:128px;height:180px;position:absolute;top:10px;left:45px;}
+		    #producejieshao{padding:0 5px;text-align: center;font-size:12px;color:#999999;height:50px;float: left;width:208px;box-sizing: border-box;}
+		    #produceprice{float: left;width:104px;text-align:right;font-size:16px;color: red;}
+		    #po{font-size:11px;color:#a5a5a5;text-decoration: initial;text-decoration: line-through;display: block;width:104px;float: left;height:21px;line-height:22px;border-bottom:1px solid silver;}
+		    #produceprice{border-bottom:1px solid #a5a5a5;}
+		    #historyProduct{width:208px;border:1px solid silver;height:686px;}
+		    #historyProductul li{width:208px;height:100px;float: left;border-bottom:1px solid silver;position: relative;}
+		    #historyProductul li img{width:80px;height:80px;position: absolute;top:10px;left:10px;border:1px solid silver;}
+	        #historyProductjieshao{width:100px;height:40px;font-size:12px;left:100px;position: absolute;padding:10px 10px;line-height:20px;}
+	        #historyProductprice{width:100px;height:20px;font-size:14px;left:100px;position: absolute;padding:10px 10px;line-height:20px;top:60px;color: red;}
+		    #detailsrow-right{width:970px;height:3800px;float: left;}
+		    #breadcrumb{width:958px;height:30px;float: left;margin:10px 0 0 10px;border:1px solid #e4e4e4;}
+		    #First li{float: left;font-size: 12px;text-align: center;line-height: 30px;  display: block;padding:0 5px 0 10px;color: #666;cursor:pointer;}
+		    #First li:after{background: url(../img/tupian/common.gif) right -177px no-repeat;content: "";width:20px;height:25px;float: right;}
+		    #product{width:958px;height:390px;float: left;}
+		    #product-left{width:325px;height:390px;float: left;}
+		    #product-left-img{width:250px;height:300px;float: left;margin-top:10px;padding-bottom:10px;position: relative;}
+		    #product-left-img img{width:229px;height:300px;float: left;margin-top:10px;padding-bottom:10px;position:absolute;}
+		    #items{width:100%;height:70px;float: left;}
+		    .prev{width:12px;height:100%;float: left;background: url(../img/tupian/product.gif) -150px -504px no-repeat  #f4f4f4;border:1px solid lightgray;}
+		    .nexts{width:12px;height:100%;float: right;background: url(../img/tupian/product.gif) -208px -504px no-repeat  #f4f4f4;border:1px solid lightgray;}
+		    #items>ul>li>img{width:60px;height:58px;float: left;padding:0px;margin-top:5px;margin-right:10px;margin-left: 1px;}
+		    #product-right{width:633px;height:390px;float: left;}
+		    #info{width:583px;height:110px;float: left;}
+		    #info h5{display: block;width:633px;height:30px;line-height:30px;}
+		    #info dt{width:70px;height:26px;float: left;font-size:8px;color:#666666;line-height:26px;}
+		    #info dd{width:450px;height:26px;float: left;font-size:8px;color:#666666;line-height:26px;}
+		    #info strong{color: red;font-size:18px;padding-right:10px;float: left;display: block;}
+		    .action{width:631px;height:100px;float: left;background:#fffee6;border: 1px solid #e7dbb1;}
+		    .action:hover{border: 1px solid orange;}
+		    .action>dt{width:633px;height:40px;float: left;border-bottom:1px solid #faeac7;padding:10px 10px;box-sizing: border-box;}
+		    .action input{width:25px;height:17px;float: left;outline: none;text-align: center;}
+		    .action p{font-size: 14px;float: left;width:30px;height:25px;display: inline;}
+		    #increase{margin-left: 3px; cursor: pointer; width:20px;height:8px;background: url(../img/tupian/product.gif) 0px -569px no-repeat  #f4f4f4;display: block;border:1px solid  #e4e4e4;margin-bottom:1px;}
+		    #decrease{margin-left: 3px;cursor: pointer; width:20px;height:8px;background: url(../img/tupian/product.gif) -30px -570px #f9f9f9 no-repeat;display: block;border:1px solid  #e4e4e4;}
+		    #increase:hover,#decrease:hover{border:1px solid silver;}
+		    #actionspan{width:30px;height:20px;float: left;}
+		    .action dd{width:633px;height:60px;float:left;padding:13px 10px 10px 70px;box-sizing: border-box;}
+		    #addCart{width:127px;height:36px;float: left;background: url(../img/tupian/product.gif) 0px -600px no-repeat;line-height:36px;cursor: pointer;}
+		    #addCart p{color: white;width:127px;height:36px;text-indent:38px;font-size:16px;}
+		    #addProductFavorite{cursor: pointer; width:40px;height:36px;float: right;line-height:36px;font-size: 14px;color:#666666;}
+		    #bdshare{width:633px;height:180px;float: left;}
+		    #bdshare>li{width:25px;height:25px;float: left;background: url(../img/tupian/is.png) no-repeat;cursor: pointer;}
+		    #bdshare div{width:45px;height:25px;float: left;background: url(../img/tupian/sc.png) no-repeat;background-position: -42px -25px;text-align: center;line-height:25px;font-size:14px;}
+		    #column{width:960px;height:36px;float: left;background: url(../img/tupian/product.gif) 0px -149px repeat-x;margin-top:10px;border:1px solid #dddddd;}
+		    #column li{float: left;font-size:14px;padding:0 10px;line-height:36px;border-right:1px solid #dddddd;cursor: pointer;}
+		    #column li:hover{color: red;}
+		    .title{width:960px;height:50px;float: left;border-bottom:2px solid #d7d7d7;margin-bottom:10px;}
+		    .title strong{width:100px;height:50px;line-height:50px;float: left;text-align: center;border-bottom:2px solid #ff9900;}
+		    #detailsrow-right{font-size: 12px;color:#666666;float: left;display: block;}
+		    .group{width:960px !important;height:40px !important;background: #f1f1f1;text-align: left;padding:0 10px;margin-top:10px;padding:0 !important;border-top:0;}
+		    #tables th{width:120px;height:30px;border-bottom:1px solid #e4e4e4;border-right:1px solid #e4e4e4;padding:0 0 0 10px;box-sizing: border-box;font-weight:normal;}
+		    #tables td{width:550px;height:30px;border-bottom:1px solid #e4e4e4;}
+		    #tables{color: #666666;border:1px solid #e4e4e4;border-bottom:0;font-size:12px;margin-bottom:20px;}
+		    #commonFooter{width:1350px;height:500px;float: left;}	
+		    #commenton:hover{color: red;}
+		    #bigimg{width:450px;height:450px;float: left;position: absolute;background:white;z-index:999;display: none;overflow: hidden;}
+		    #mask{width:130px;height:155px;background: silver;position: absolute;display: none;opacity:0.5;z-index: 999;}
+		</style>
+	</head>
+	<body>
+		<div id="commonHeader">
+			
+		</div>
+		<div id="detailsrow" class="detailsrow">
+			
+			<div id="detailsrow-left">
+				<ul style="box-shadow: 1px 2px 5px silver">
+					<li>
+						<div>图书</div>
+						<ul>
+							<li>二手图书</li>
+							<li>文学小说</li>
+							<li>少儿</li>
+							<li>人文社科</li>
+						</ul>
+					</li>
+					<li id="detailsrow-left-li">
+						<div>手机数码影音</div>
+						<ul>
+							<li>手机通讯</li>
+							<li>手机配件</li>
+							<li>摄影摄像</li>
+							<li>数码配件</li>
+						</ul>
+					</li>
+					<li>
+						<div>电脑办公</div>
+						<ul>
+							<li>电脑整机</li>
+							<li>电脑配件</li>
+							<li>电脑外设</li>
+							<li>网络设备</li>
+						</ul>
+					</li>
+					<li id="detailsrow-left-li">
+						<div>家用电器</div>
+						<ul>
+							<li>生活电器</li>
+							<li>厨卫电器</li>
+							<li>个护健康</li>
+							<li>大家电</li>
+						</ul>
+					</li>
+					<li>
+						<div>爱生活</div>
+						<ul>
+							<li>智能机器人</li>
+							<li>智能生活</li>
+							<li>生活日用</li>
+							<li>清洁用品</li>
+						</ul>
+					</li>
+					<li id="detailsrow-left-li">
+						<div>食品</div>
+						<ul>
+							<li>生鲜</li>
+							<li>休闲食品</li>
+							<li>粮油</li>
+							<li>冲调饮料</li>
+						</ul>
+					</li>
+				</ul>
+			<div id="left-hotsell" style="box-shadow: 1px 2px 5px silver">
+				<div id="left-hotsell-p">热销商品</div>
+				<ul id="produce">
+					<li>
+						<div id="produceimg"><img src=" " /></div>
+					    <div id="producejieshao">《中国诗词大会》上</div>
+					    <div id="produceprice">￥20.68&nbsp;</div><span id="po">￥25.00</span>
+					</li>
+					<li>
+						<div id="produceimg"><img src="" /></div>
+					    <div id="producejieshao">《中国诗词大会》上</div>
+					    <div id="produceprice">￥20.68&nbsp;</div><span id="po">￥25.00</span>
+					</li>
+					<li >
+						<div id="produceimg"><img src="" /></div>
+					    <div id="producejieshao">《中国诗词大会》上</div>
+					    <div id="produceprice">￥20.68&nbsp;</div><span id="po">￥25.00</span>
+					</li>
+				</ul>
+			</div>
+			<div id="historyProduct" style="box-shadow: 1px 2px 5px silver">
+				<div id="left-historyProduct-p">最近浏览过的</div>
+				<ul id="historyProductul" >
+					<li>
+						<img src="../img/tupian/1767087.jpg" />
+						<div id="historyProductjieshao">和老爸一起动手酷发明</div>
+						<div id="historyProductprice">￥110.40</div>
+					</li>
+					<li>
+						<img src="../img/tupian/1767087.jpg" />
+						<div id="historyProductjieshao">和老爸一起动手酷发明</div>
+						<div id="historyProductprice">￥110.40</div>
+					</li>
+					<li>
+						<img src="../img/tupian/1767087.jpg" />
+						<div id="historyProductjieshao">和老爸一起动手酷发明</div>
+						<div id="historyProductprice">￥110.40</div>
+					</li>
+					<li>
+						<img src="../img/tupian/1767087.jpg" />
+						<div id="historyProductjieshao">和老爸一起动手酷发明</div>
+						<div id="historyProductprice">￥110.40</div>
+					</li>
+					<li>
+						<img src="../img/tupian/1767087.jpg" />
+						<div id="historyProductjieshao">和老爸一起动手酷发明</div>
+						<div id="historyProductprice">￥110.40</div>
+					</li>
+					<li>
+						<img src="../img/tupian/1767087.jpg" />
+						<div id="historyProductjieshao">和老爸一起动手酷发明</div>
+						<div id="historyProductprice">￥110.40</div>
+					</li>
+					<div id="left-historyProduct-pp">最近浏览过的</div>
+				</ul>
+				
+				
+				
+			</div>
+			</div>
+			<div>
+				<div id="detailsrow-right">
+				<div id="breadcrumb">
+					<ul id="First">
+						<li>1</li>
+						<li>1</li>
+						<li>1</li>
+						<li>1</li>
+					</ul>
+				<div id="product">
+					<div id="product-left">
+						<div id="product-left-img">
+                            <div id="mask"></div>               
+							<img src="" style="position:relative;top: 0;"/>
+
+								
+						</div>
+						<div id="items" >
+							<div class="prev"></div>
+							<ul class="imgli">
+								<li><img src=""/></li>
+							</ul>
+							<div class="nexts"></div>
+						</div>
+					</div>
+					<div id="product-right">
+						<div id="bigimg">
+							<img src=""/>
+						</div>
+						<div id="info">
+							<h5>1</h5>
+								<table>
+									<tr>
+										<dt>1</dt>
+										<dd>1</dd>
+									</tr>
+									<tr>
+										<dt>1</dt>
+										<strong id="price">1</strong><dd style="width:390px !important;">1</dd>
+									</tr>
+									<tr>
+										<dt>1</dt>
+										<dd>1</dd>
+									</tr>
+								</table>
+						</div>
+						<div class="action">
+							<dt>
+								<p>数量</p>
+								<input id="quantity" type="text" value="1">
+								<div id="actionspan">
+									<span id="increase" class="increase"></span>
+									<span id="decrease" class="decrease"></span>
+								</div>
+								<p>件</p>
+							</dt>
+							<dd>
+								<div id="addCart" value="1"><p>加入购物车</p></div>
+								<div id="addProductFavorite">收藏</div>
+							</dd>
+						</div>
+						<ul id="bdshare">
+							<li style="background-position:0 -75px;position: relative;"></li>
+							<li style="background-position:0 -115px;"></li>
+							<li style="background-position:0 -235px;"></li>
+							<li style="background-position:0 -195px;"></li>
+							<li style="background-position:0 -715px;"></li>
+							<li style="background-position:0  5px;"></li>
+							<div style="cursor: pointer;"><input type="text" style="cursor: pointer;width: 20px;height:12px;text-align: center;outline: none;border:0;"/></div>
+						</ul>
+					</div>
+				</div>
+				 
+				 <ul id="column">
+							<li>商品介绍</li>
+							<li>商品参数</li>
+							<li>商品评论</li>
+							<li>商品咨询</li>
+			   </ul>
+			   <div class="title"><strong>商品介绍</strong></div>
+			   
+			    <div id="spanimg">
+				 	<img src=""  style="width:900px;height:900px;"/>
+				 	<img src=""   style="width:900px;height:900px;"/>
+				 </div>
+				
+				
+				<div>
+					给3-6岁幼儿准备的诗词启蒙绘本，涵盖幼儿园到小学应知应会应背的45首古诗，适合幼儿理解和诵读，培养孩子对古典文学和传统文化的兴趣，为孩子开启古诗词阅读的大门。 
+ ·除了注音诗词外，还有精工细笔又充满童趣的绘画，诠释古诗的内容，帮助幼儿进一步理解诗中的古意。画中还暗藏各种小知识点和趣味游戏，品画之外，还能提高孩子的观察力，专注力 <br />
+ 附有“听妈妈讲那过去的故事”别册，每首诗都配着一个可以讲述的故事，供父母为幼儿讲解古诗参考。同时每首诗扫码即可听幼儿园同龄小朋友朗诵的音频，让孩子在轻松的环境中跟着自主背诵学习。妈妈的故事扫码也可以听到妈妈讲故事的音频。可看，可学，可听，可教。
+               <br />
+               <br />
+1弹歌&nbsp;&nbsp;&nbsp;&nbsp;97黄鹤楼 <br />
+2咏雪&nbsp;&nbsp;&nbsp;&nbsp;99饮酒 <br />
+5咏鹅&nbsp;&nbsp;&nbsp;&nbsp;101长歌行 <br />
+7相思&nbsp;&nbsp;&nbsp;&nbsp;103静夜思 <br />
+9春晓 <br />
+11和张仆射塞下曲（其二） <br />
+14小儿垂钓 <br />
+17惠崇春江晚景 <br />
+19渔歌子 <br />
+20击壤歌 <br />
+23登鹳雀楼 <br />
+25敕勒歌 <br />
+28寻隐者不遇 <br />
+31登幽州台歌 <br />
+33七步诗 <br />
+34咏柳 <br />
+37垓下歌 <br />
+39望庐山瀑布 <br />
+40元日 <br />
+47出塞（其一） <br />
+49清平乐·村居 <br />
+51秋浦歌（其十四） <br />
+53赠汪伦 <br />
+54晓出净慈寺送林子方 <br />
+56逢雪宿芙蓉山主人 <br />
+58小池 <br />
+62早发白帝城 <br />
+64春夜喜雨 <br />
+67江雪 <br />
+68梅花 <br />
+71村居 <br />
+73大风歌 <br />
+77宿新市徐公店 <br />
+78绝句 <br />
+80和张仆射塞下曲（其三） <br />
+82凉州词 <br />
+85蜂 <br />
+86悯农（其二） <br />
+90江畔独步寻花 <br />
+93清明 <br />
+<br />
+冯鼎杰，毕业于中央美院油画系，2000年到夏荆山先生创办的荆山画院修习一年，接受了正统的中国传统艺术熏陶，开始以工笔重彩、三矾九染等古代传统技艺进行佛像绘画。后曾到南美国家苏里南游历三年，作品多次参展，颇获好评。 
+ 冯琪，毕业于北京工业大学设计系视觉传达专业。五岁始随父学习国画，以铁线描见长。 <br />
+ 2000年起进入荆山画院修习，后拜夏荆山先生为师，修习中国传统文化及正统的工笔重彩画技法，在还原古法三矾九染的色彩体系上有相当独到的传承。           两位画师为2012年首届“中国之美”书画艺术大赛参展艺术家。                                                                     郑斌，毕业于武汉大学，文学学士、历史学硕士。曾负责编撰出版《挑战不可能》《中国诗词大会(第二季)》等畅销书。
+				<br /></div>
+				
+			 <div class="title"><strong>商品参数</strong></div>	
+				<table id="tables">
+					       <tr>
+									<th class="group" colspan="2">基本信息</th>
+								</tr>
+									<tr>
+										<th>品牌/出版社</th>
+										<td>中信出版社</td>
+									</tr>
+									<tr>
+										<th>ISBN</th>
+										<td>9787508692357</td>
+									</tr>
+									<tr>
+										<th>条码</th>
+										<td>9787508692357</td>
+									</tr>
+									<tr>
+										<th>编者</th>
+										<td>冯鼎杰、冯琪-绘郑斌-</td>
+									</tr>
+									<tr>
+										<th>译者</th>
+										<td>--</td>
+									</tr>
+									<tr>
+										<th>出版年月</th>
+										<td>2018.08</td>
+									</tr>
+									<tr>
+										<th>开本</th>
+										<td>8开</td>
+									</tr>
+									<tr>
+										<th>页数</th>
+										<td>103</td>
+									</tr>
+									<tr>
+										<th>版次</th>
+										<td>1版1次</td>
+									</tr>
+						</table>
+						<br />
+				<table id="tables">
+					       <tr>
+									<th class="group" colspan="2">商品评论</th>
+								</tr>
+								<tr>
+										<th ><div style="float: left;">暂无商品评论信息</div><span id="commenton" style="display: block;float: left;">[发表商品评论]</span></th>
+									</tr>
+				</table>
+					<table id="tables">
+					       <tr>
+									<th class="group" colspan="2">商品咨询</th>
+								</tr>
+								<tr>
+										<th><div style="float: left;">暂无商品咨询信息</div><span id="commenton" style="display: block;float: left;">[发表商品咨询]</span> </th>
+									</tr>
+				</table>
+				
+			</div>
+			</div>
+		</div>
+		
+		</div>
+		<div id="commonFooter"></div>
+		<script type="text/javascript" src="../js/cook.js" ></script>
+		<script type="text/javascript" src="../js/tools.js" ></script>
+		<script type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
+		<script type="text/javascript">
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		$("#commonHeader").load("header.html","dd",function(){
+				
+			})
+		$("#commonFooter").load("footer.html","dd",function(){
+			
+			})
+		
+		var Mflag=true;
+		$("#mask").mouseenter(function(){
+			$("#mask").show();
+			$("#bigimg").show();
+		})
+		$("#product-left-img").mouseenter(function(){
+			if(Mflag){
+			$("#bigimg").show();
+			$("#mask").show();
+			}
+		}).mouseleave(function(){
+			$("#bigimg").hide();
+			$("#mask").hide();
+		}).mousemove(function(e){
+			if(Mflag){
+				var mx=e.pageX-$(this).offset().left-$("#mask").width()/2;
+				var my=e.pageY-$(this).offset().top-$("#mask").height()/2;
+//				console.log(mx,my)
+				mx<0?mx=0:mx;
+				my<0?my=0:my;
+				var maxX=$("#product-left-img").width()-$("#mask").width();
+				var maxY=$("#product-left-img").height()-$("#mask").height();
+			    mx>maxX?mx=maxX:mx;
+				my>maxY?my=maxY:my;
+			    $("#mask").css("left",mx);
+				$("#mask").css("top",my);
+				var bilix=$("#bigimg img").width()/$(this).width();
+				var biliy=$("#bigimg img").height()/$(this).height();
+			
+				$("#bigimg").scrollLeft(bilix*mx);
+				$("#bigimg").scrollTop(biliy*my);
+			}
+		})
+		        
+		   	var quantity = $("#quantity").val();
+		   	$("#increase").click(function(){
+		   		console.log(quantity)
+		        quantity=(parseInt(quantity) + 1);
+		        $("#quantity").val(quantity);
+		        })
+		   	 	$("#decrease").click(function(){
+		   		console.log(quantity)
+		          if(quantity!=0){
+		          	quantity=(parseInt(quantity) - 1);
+		          	$("#quantity").val(quantity);
+		          }else{
+		          	$("#quantity").val(quantity);
+		          }
+		          
+		        })
+				
+		
+		
+		function GetQueryString(name) {
+		    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+		    var r = decodeURI(window.location.search.substr(1)).match(reg);
+		    if (r != null)return unescape(r[2]);
+		    return null;
+		}
+		//获取商品id
+		var pig=GetQueryString("pid"); 
+		$.ajax({
+				url:"../js/details.json",
+				type:"get",
+			}).done(function(res){
+				var arr="";
+				var ars="";
+				var arss="";
+				var aras="";
+				var  nowdata=null;
+				$.each(res.quanbu,function(index,ele){
+					ars+='<img src="'+ele.rowss.img+'" style="width:800px;height:800px;"/>'
+				});
+				$("#bigimg").html(ars);
+				$.each(res.quanbu, function(index,ele) {
+//					console.log(nowdata.quanbu)
+				if(ele.pid.pig==pig){
+					nowdata=res.quanbu[index];
+					$("#detailsrow").attr("pig",nowdata.pid.pig);
+					$("#product-left-img img").attr("src",nowdata.smalliimg.imgsrc);
+					$("#bigimg img").attr("src",nowdata.rowss.img);
+					$(".imgli li img").attr("src",nowdata.smallimgs[0]);
+					$("#info h5").html(nowdata.infos.hs);
+					$("#info dt:eq(0)").html(nowdata.infos.oa);
+					$("#info dd:eq(0)").html(nowdata.infos.ob);
+					$("#info dt:eq(1)").html(nowdata.infos.oc);
+					$("#info dd:eq(1)").html(nowdata.infos.oe);
+					$("#info strong").html(nowdata.infos.od);
+					$("#info dt:eq(2)").html(nowdata.infos.ofa);
+					$("#info dd:eq(2)").html(nowdata.infos.og);
+					$("#First>li:eq(0)").html(nowdata.lan.lana);
+					$("#First>li:eq(1)").html(nowdata.lan.lanb);
+					$("#First>li:eq(2)").html(nowdata.lan.lanc);
+					$("#First>li:eq(3)").html(nowdata.lan.land);
+					$("#produceimg img").attr("src",nowdata.rowss.img);
+					$("#produce #producejieshao").html(nowdata.infos.hs);
+					$("#produce #produceprice").html(nowdata.infos.od); 
+					$("#produce #po").html(nowdata.infos.jiage);
+					$.each(nowdata.xianqing, function(ind,eles) {
+						console.log(eles)
+						$("#spanimg img").attr("src",eles);
+					});
+				}
+				
+			});
+			
+			
+			
+
+				
+				
+				
+				
+				
+				
+				
+			$(".imgli li img").click(function(){
+			 $("#product-left-img img:eq(0)").attr("src",$(this).attr("src"));
+			$("#bigimg img").attr("src",$(this).attr("src"));
+			$(this).css("border","1px solid #333").siblings().css("outline","none");
+		})
+			$(".nexts").click(function(){
+			$(".imgli").children().last().prependTo($(".imgli"));
+			$(".imgli").css("margin-left",-50);
+			$(".imgli:not(:animated)").stop(true).animate({left:0},800);
+			})	
+			$(".prev").click(function(){
+			$(".imgli:not(:animated)").animate({left:-50},0,function(){
+				//第一张图片添加到最后
+				$(".imgli").find("li").eq(0).appendTo($(".imgli"));
+				$(".imgli").css("left",0);
+			})
+		}) 
+			function move(){
+			$(".imgli:not(:animated)").animate({left:-50},800,function(){
+				//第一张图片添加到最后
+				$(".imgli").find("li").eq(0).appendTo($(".imgli"));
+				
+				$(".imgli").css("left",0);
+				
+			})	
+		}
+		})
+//			
+		
+		</script>
+	</body>
+</html>
+

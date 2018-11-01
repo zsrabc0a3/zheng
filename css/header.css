@@ -1,0 +1,41 @@
+*{margin: 0;padding: 0;}
+*body{background: #fff;}
+#header{width: 100%;}
+#top{width: 100%;height: 30px;background:#f6f6f6;border:1px solid #e6e6e6;margin: 0 0 20px 0;}
+#left{width:400px;height:30px;margin-left:70px;list-style: none;float: left;}
+#left li{float: left;margin-left:15px;line-height: 30px;color: #666666;font-size: 12px;}
+.lianjie{color:#666;}
+.lianjie:hover{color:#ff7700;cursor: pointer;}
+#register:hover{color:#ff7700;cursor: pointer;}
+#right{width:420px;height: 30px;float: left;margin-left: 440px;list-style: none;}
+#right li{float: left;margin-right:10px;line-height: 30px;color: #666666;font-size: 12px;}
+#right div{float: left;margin-right:10px;line-height: 30px;color: #666666;font-size: 12px;}
+#right li:hover{color:#ff7700;cursor: pointer;}
+#shoppinglogo{background: url(../img/tupian/common.gif)no-repeat;background-position:-282px -212px;width: 14px;height: 30px;cursor:default !important;}
+#right #zhi{color:#ff7700;}
+#header-row{width: 1200px;height:70px;margin: 0 auto;}
+#header-span{width:330px;height:70px;position: relative;float: left;}
+#header-img{position: absolute;top:5px;}
+#header-content{width: 510px;height:70px;float: left;}
+#header-search{width:500px;height:34px;border:3px solid #ffecd0;border-radius:3px;}
+#header-searchid{width:398px;height:32px;border:1px solid #FF7700;float: left;}
+#header-key-word{width:398px;height:30px;border:1px solid #FF7700;float: left;outline: none;}
+#header-button{width:100px;height: 34px;outline:0; background:url(../img/tupian/common.gif) no-repeat;float: left;border:1px solid #FF7700;background-position: -1px -211px;cursor: pointer;}
+.hotSearch{list-style: none;width:500px;height:30px;}
+.hotSearch div{float: left;line-height: 30px;margin:0 20px 0 0;font-size:13px;}
+.hotSearch li{float: left;line-height: 30px;margin:0 20px 0 0;font-size:13px;cursor: pointer;}
+.phone{width:280px;height:55px;float: left;margin: 0 0 0 80px; position: relative;}
+.phone p{width:280px;height:55px;line-height:55px;font-size:24px;text-align: center;color: #bc7b00;border:1px solid #e5e5e5;border-radius:5px;position:absolute;}
+#phoneimg{width:120px;height:30px;background:white;position:absolute;top: -18px;left: 30px;}
+#phonelogo{width:30px;height:30px;background: url(../img/tupian/common.gif) no-repeat;background-position:-277px -234px; position:absolute;top: 3px;left: 10px;}
+#phoneimg span{width:90px;height:30px;position:absolute;top: 6px;left: 26px;}
+#header-nav{width: 1200px;height:40px;margin:  0 auto;background:#ff7700;}
+#header-nav #tr{background:#f04400;width:210px;height: 40px;float: left;}
+#header-nav #td{width: 40px;height: 40px;background: url(../img/tupian/common.gif) no-repeat;background-position:-270px -270px;float: left;}
+#title{width:170px;height:40px;float: left;line-height:40px;font-size:14px;color: white;}
+#header-nav ul{list-style: none;}
+#header-nav ul li{float: left;padding:0 20px;line-height:40px;color: white;font-weight:900;cursor: pointer;}
+#header-nav li:hover{
+	background: rgba(0,0,0,0.3);
+	transition: all 1s;
+}

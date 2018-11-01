@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="icon" type="" href="../img/tupian/favicon.ico"/>
+		<link rel="stylesheet" href="../css/land.css" />
+		<style>
+			#commonHeader{
+			width:1350px;
+			height:162px;
+		}
+		</style>
+	</head>
+	<body>
+			<div id="commonHeader">
+			
+		</div>
+		<div id="land-center">
+			<div id="land-left">
+				
+			</div>
+			<div id="land-right">
+				<div id="titlep">
+				<p>会员登陆</p><span>USER LOGIN </span></div>
+				<div id="titlep-inps">
+				<table>
+				<tr>
+					<th>用户名：</th>
+					<td><input id="user" type="text" style="width:200px;height:30px;border-radius:5px;"/></td>
+				</tr>
+				<tr>
+					<th>密&nbsp;码：</th>
+					<td><input id="pass" type="text" style="width:200px;height:30px;border-radius:5px;"/></td>
+				</tr>
+				<tr>
+					<th>验证码：</th>
+					<td><input type="text" name="yan" id="yan" style="width:100px;height:30px;border-radius:5px;float: left;"/><input type="button"id="rightcode" value="" onclick="createNewCode()" style="width:80px;height:33px;margin:0 0 0 20px;"></td>
+				    
+				</tr>
+				<tr>
+					<th></th>
+					<td><input type="checkbox" style="width:15px; height:15px;float: left;"/><p>记住用户密码&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><a href="#">忘记密码</a></td>
+				</tr>
+				<tr>
+					<th></th>
+					<td><input id="denglv" type="submit" value="登 陆" style="width:100px;height:45px;background:rgb(252, 86, 13);margin:-30px 0 0 0;outline:0;border:0; color:white;"></input></td>
+				</tr>
+				</table>
+				<div id="land-back">
+				<div id="Signup">还没有注册账号？</div>
+				<div id="Signupshopp">立即注册即可体验在线购物！<a style="color:blue;cursor: pointer;">立即注册</a></div>
+				</div>
+				</div>
+			</div>
+		</div>
+		<div id="commonfooter">
+			
+		</div>
+		<div id="onebondtops"></div>
+		
+		<script type="text/javascript" src="../js/cookie.js"></script>
+		<script type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
+		<script type="text/javascript" src="../js/land.js" ></script>
+		<script type="text/javascript">
+			$("#commonHeader").load("header.html","dd",function(){
+				
+			})
+			$("#commonfooter").load("footer.html","dd",function(){
+				
+			})
+			$("#onebondtops").load("Onebondtop.html","dd",function(){
+			
+			})
+			var btn=document.getElementById("denglv");	
+			btn.onclick=function(){
+				var userval=document.getElementById("user").value;
+				var passval=document.getElementById("pass").value;
+				var cookiestr=cookieObj.get("user");
+				var cookiearr=JSON.parse(cookiestr);
+				console.log(cookiearr)
+				if(userval&&passval){
+					for (var i=0;i<cookiearr.length;i++){
+						if(userval==cookiearr[i].user){
+							if(cookiearr[i].pass==passval){
+								alert("登陆成功");
+								location.href="zhuye.html";
+								return ;
+							}else{
+								alert("密码错误");
+								return ;
+							}
+						}
+					}
+					alert("用户名不存在");
+				}else{
+					alert("输入用户名密码");
+				}	
+			}
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			</script>
+	</body>
+</html>

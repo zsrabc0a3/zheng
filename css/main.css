@@ -1,0 +1,30 @@
+*{margin: 0;padding: 0;list-style: none;}
+#main{width:1200px;height:372px;background:yellow;margin: 0 auto;}
+#leftsidebar{width:210px;height: 372px;background:orange;list-style: none;float: left;}
+#leftsidebar li{width:210px;background:white;height:30px;line-height:30px;border:1px solid lightgray;border-top: 0;font-weight:900;font-size:14px;transition: all 1s;cursor: pointer;}
+#subnav1{width:700px;height:372px;background:rgba(255, 255, 255,0.9);float: left; font-size: 14px;position: relative;display: none;z-index:999;}
+#subnav2{display: block;width:500px;line-height:60px;font-weight: 900;color: #666666;border-bottom: 1px solid lightgray;}
+#subnav3{width:500px;line-height:60px;font-weight: 900;color: #666666;}
+#subnav4{width:80px;line-height:60px;float: left;display: block;}
+#subnav21{width:80px;line-height:60px;float: left;display: block;}
+#subnav1 ul{width:500px;list-style: none;float: left;font-size:12px;}
+#subnav1 ul li{float: left;cursor: pointer;padding:0 10px;}
+#subnav1 p{float: left;}
+#subnav5{width:200px;height:372px;display: block;float: right;margin:0 0 0 500px;position: absolute;border-left:1px solid silver;}
+#subnav{overflow: hidden;width:700px;height:372px;float: left;}
+#pinpai{line-height:40px;display: block;font-size:12px;font-weight:900;color: #666666;}
+#subnav5 ul{color: #666666;}
+#RoundMap{width:990px;height:372px;background:red;float: left;position: absolute;margin:0 0 0 210px;}
+#bannerlogo{width:990px;height:372px;overflow: hidden;}
+#bannerlogo img{width:990px;height:372px;display: none;}
+#banner{width:990px;height:30px;background: rgba(0,0,0,0.3);position: absolute;margin: 342px 0 0 210px;}
+#banner ul{margin: 0 0 0 820px;}
+#banner li{width:20px;height:13px;background: rgba(0,0,0,0.5);float: left;margin:10px 0 0 10px;}
+#banner_btn{width:990px;height: 170px;position: absolute;margin:100px 0 0 0;}
+#btn-left{width: 60px;height:100px;background: url(../img/tupian/arrows.gif) no-repeat;float: left;opacity:0.3;}
+#btn-right{width: 60px;height:100px;background: url(../img/tupian/arrows.gif) no-repeat;float: left;opacity:0.3; background-position:-40px 0px;margin:0 0 0 870px;}
+#subnav2 li:hover{color:red;}
+#subnav3 li:hover{color:red;}
+#nav:hover{color:red;}
+#subnav5 li:hover{color:red;}
+#subnav #nav{display: block;padding:0 10px;width:100px;}

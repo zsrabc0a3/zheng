@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="icon" type="" href="../img/tupian/favicon.ico"/>
+		<style>
+			*{margin: 0;padding:0;}
+			#commonHeader{width:1350px;height:162px;}
+			#commonFooter{width:1350px;height:500px;	}	
+		    #wrap{width:1200px;height:494px;border:1px solid #d7d7d7;margin: 20px auto; box-shadow:1px 1px 5px darkgray;}
+		    #wrap-top{width:1200px;height:50px;border:1px dotted #ededed;float: left;}
+		    #wrap-top-strong{width:105px;height:50px;line-height:50px;color:rgb(49, 100, 175);text-align: center;float: left;font-size:20px;}
+		    #wrap-top-USER{width:120px;height:50px;line-height:50px;color:rgb(216, 216, 216);float: left;font-size:12px;}
+		    #wrap-center-left{width:600px;height:443px;float: left;}
+		    #wrap-center-left table tr th{width:200px;height:52px;float: left;padding:15px 0;box-sizing: border-box;}
+		    #wrap-center-left table tr th p{width:120px;padding:0;line-height:22px;height:22px;float: right;}
+		    #wrap-center-left table tr td{width:395px;height:52px;float: left;padding:10px 0;box-sizing: border-box;}
+		    #wrap-center-left table tr td input{width:190px;height:28px;border-radius:5px;outline: none;}
+		    #wrap-center-left table tr td:hover input{border:1px solid #89c1ee;}
+		    #shop{width:100px;height:25px;line-height:25px;font-size:12px;margin:0 10px;}
+		    #wrap-center-left table tr td span{display: block;height:40px;line-height:45px;font-size:13px;color:#666;width:60px;}
+		    #spans:hover{color:rgb(252, 86, 13);cursor: pointer;}
+		    #wrap-center-right{width:600px;height:443px;float: left;position: relative;}
+		    #wrap-center-login{width:300px;height:110px;position: absolute;right:0;padding:20px;box-sizing: border-box;background: rgb(255, 248, 219);border-left:2px solid rgb(242, 242, 242);border-bottom:2px solid rgb(242, 242, 242);}
+	        #Tohave{font-size:20px;color:rgb(189, 86, 19);height:30px;line-height:30px;}
+	        #Currentline{font-size:13px;color:#666;height:40px;line-height:40px;}
+	        .red{display: block;width:170px !important;height:30px;float:right;margin:-10px 0 0 0;}
+		</style>
+	</head>
+	<body>
+		<div id="commonHeader">
+			
+		</div>
+		<div id="wrap">
+			<div id="wrap-top">
+				<div id="wrap-top-strong">
+					会员注册
+				</div>
+				<div id="wrap-top-USER">
+					USER REGISTER
+				</div>
+				
+			</div>
+			<div id="wrap-center-left">
+				<table>
+					<tr>
+						<th> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*用户名：</p></th>
+						<td><input type="text" id="user"/><span class="red"></span></td>
+					</tr>
+					<tr>
+						<th> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*手机号：</p></th>
+						<td><input type="text" id="phone"/><span class="red"></span></td>
+					</tr>
+					<tr>
+						<th> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*密 码：</p></th>
+						<td><input id="pass" type="text" /><span class="red"></span></td>
+					</tr>
+					<tr>
+						<th> <p >&nbsp;*确认密码:</p></th>
+						<td><input id="rpass" type="text" /><span class="red"></span></td>
+					</tr>
+					<tr>
+						<th> <p>*手机验证码:&nbsp;&nbsp;</p></th>
+						<td><input id="yan" type="text" /><button id="shop">获取手机验证码</button></td>
+					</tr>
+					<tr>
+						<th> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*验证码：</p></th>
+						<td><input type="text" style="width:100px;float: left;"/><button id="rightcode" onclick="createNewCode()" style="width:80px;height:32px;margin:0 0 0 10px;float: left;"></button></td>
+					</tr>
+					<tr>
+						<th></th>
+						<td><button id="btns" style="width:145px;height:50px;color: white;font-size:14px;background: rgb(252, 86, 13);outline:none;border:0;">同意一下协议并注册</button></td>
+					</tr>
+					<tr>
+						<th></th>
+						<td><span id="spans">注册协议</span></td>
+					</tr>
+				</table>
+			</div>
+			<div id="wrap-center-right">
+					<div id="wrap-center-login">
+						<div id="Tohave">已经拥有账号了？</div>
+						<div id="Currentline">立即登录即可体验在线购物！<span style="color:rgb(189, 86, 19);">立即登录</span></div>
+					</div>
+			</div>
+		</div>
+		<div id="commonFooter"></div>
+		
+		    <script type="text/javascript" src="../js/cookie.js" ></script>
+			<script type="text/javascript" src="../js/jquery-1.8.3.min.js" ></script>
+		<script>
+			$("#commonHeader").load("header.html","dd",function(){
+				
+			})
+			$("#commonFooter").load("footer.html","dd",function(){
+			
+			})
+			
+			var str; var createNewCode = function () { 
+    		var arr = ['0','1','3','4','5','6','7','8','9','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']; 
+    		str = ""; 
+    		var strlength = 4; 
+    		for(var i = 0; i < strlength; i++) { 
+    			var num = Math.floor(Math.random()*arr.length);
+    			str+= arr[num];
+    		}; 
+    		var rightcode = document.getElementById("rightcode"); 
+    		rightcode.innerHTML = str;
+    	} 
+    	window.onload = createNewCode; 
+
+
+		
+		var user=document.getElementById("user");
+		var spans=document.getElementsByClassName("red");
+		var f;
+		var reg=/^[\u4e00-\u9fa5]{2,9}$/;
+		user.onblur=function(){
+		var mval=user.value;
+        f=reg.test(mval);
+        if(f){
+				spans[0].innerHTML="√";
+				spans[0].style.color="seagreen";
+			}else{
+				spans[0].innerHTML="必填";
+				spans[0].style.color="red";
+			}
+		}	
+		var phone=document.getElementById("phone");
+		var l;
+		var reg1=/^1(?:3\d|4[4-9]|5[0-35-9]|6[67]|7[013-8]|8\d|9\d)\d{8}$/;
+		phone.onblur=function(){
+			var lval=phone.value;
+			l=reg1.test(lval);
+			if(l){
+				spans[1].innerHTML="√";
+				spans[1].style.color="seagreen";
+			}else{
+				spans[1].innerHTML="必填";
+				spans[1].style.color="red";
+			}
+		}
+		var pass=document.getElementById("pass");
+		var s;
+		var reg2=/^[a-z0-9A-Z]\w{4,12}$/i;
+		pass.onblur=function(){
+			var sval=pass.value;
+			s=reg2.test(sval);
+			if(s){
+				spans[2].innerHTML="√";
+				spans[2].style.color="seagreen";
+			}else{
+				spans[2].innerHTML="必填";
+				spans[2].style.color="red";
+			}
+		}
+		var rpass=document.getElementById("rpass");
+		var reg3=/^[a-z0-9A-Z]\w{4,12}$/i;
+        rpass.onblur=function(){
+			var y=rpass.value;
+			var rval=userarr.value;
+			r=reg3.test(rval);
+				if(y==rval){
+				spans[3].innerHTML="√";
+				spans[3].style.color="seagreen";
+			}else{
+				spans[3].innerHTML="必填";
+				spans[3].style.color="red";
+			}
+		}
+		var btn=document.getElementById("btns");
+//		btn.onclick=function(){
+//		
+//		}
+	
+
+//		var btn=document.getElementById("btn");
+		//如果没有user=[]--设置一下
+		console.log(cookieObj.get("user"));
+		if(cookieObj.get("user")==undefined){
+			cookieObj.set({name:"user",value:"[]"});
+		}
+
+		btn.onclick=function(){
+//			if(f==true&&l==true&&s==true){
+//			alert("注册成功");
+//			location.href="land.html";
+//		}else{
+//			alert("注册失败");
+//           }
+			var userval=document.getElementById("user").value;
+			var passval=document.getElementById("pass").value;
+			
+			if(userval&&passval){
+				//设置到cookie中去
+//				var mydate=new Date();
+//				mydate.setMinutes(35);
+	//			user --- userval
+//	cookies   user = [{user:"zhangsan",pass:"666"},{user:"lisi",pass:"888"}];
+				//取出cookie中 的user数组
+				
+				var userstr=cookieObj.get("user");
+			
+				var userarr=JSON.parse(userstr);
+				//判断用户名是否出现
+				for(var i=0;i<userarr.length;i++){
+					if(userarr[i].user==userval){
+						alert("用户名已存在");
+						return 
+					}
+					
+				}
+				//添加新用户
+				userarr.push({user:userval,pass:passval});
+				console.log(userarr)
+				//添加好的数组转回字符串 
+				var newstr=JSON.stringify(userarr);
+				console.log(newstr)
+				//转回的字符串  设置回cookie
+				cookieObj.set({name:"user",value:newstr});
+				
+				alert("注册成功");
+//				
+				location.href="land.html";
+				
+			}else{
+				alert("请输入内容");
+			}
+	
+		}
+	
+		
+		
+		</script>
+	</body>
+</html>
